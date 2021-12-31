@@ -1,0 +1,305 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<dos.h>
+#include<stdlib.h>
+#include<string.h>
+
+void table();
+void information();
+int get_option(void);
+int atomic_number(void);
+int atomic_symbol(void);
+int atomic_name(void);
+int atomic_weight(void);
+char block(int);
+char property(int);
+void show(int, char, char);
+int search(void);
+int history(void);
+int characteristics(void);
+int formulas(void);
+int features(void);
+
+char name[112][20] = {"Hydrogen","Helium","Lithium","Beryllium","Boron","Carbon","Nitrogen","Oxygen","Flourine","Neon", "Sodium", "Magnesium", "Aluminium", "Silicon", 
+                      "Phosphorus", "Sulphur", "Chlorine", "Argon", "Potassium","Calcium","Scandium","Titanium","Vanadium","Chromium","Manganese","Iron","Cobalt",
+                      "Nickel","Copper","Zinc","Gallium","Germanium","Arsenic","Selenium","Bromine","Krypton","Rubidium","Strontium","Yttrium","Zirconium","Niobium",
+                      "Molybdenum","Technetium","Ruthenium","Rhodium","Palladium","Silver","Cadmium","Indium","Tin","Antimony","Tellurium","Iodine","Xenon", "Cesium",
+                      "Barium","Lanthanum","Cerium","Praseodymium","Neodymium","Promethium","Samarium","Europium","Gadolinium","Terbium","Dysprosium","Holmium","Erbium",
+                      "Thulium","Ytterbium","Lutetium","Hafnium","Tantalum","Tungsten","Rhenium","Osmium","Iridium","Platinum","Gold","Mercury","Thallium","Lead",
+                      "Bismuth","Polonium","Astatine","Radon","Francium","Radium","Actinium","Thorium","Protactinium","Uranium","Neptunium","Plutonium","Americium",
+                      "Curium","Berkelium","Californium","Einsteinium","Fermium","Mendelevium","Nobelium","Lawrencium","Rutherfordium","Dubnium","Seaborgium","Bohrium",
+                      "Hassium","Meitnerium","Darmstadtium","Roentgenium","Copernicium"};
+char symbol[112][5]={"H","He","Li","Be","B","C","N","O","F","Ne", "Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga",
+                     "Ge","As","Se","Br","Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd",
+                     "Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac",
+                     "Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm",",Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn"};
+double weight[112]={1.00,4.00,6.94,9.01,10.81,12.01,14.00,16.00,20.00,20.18,23.00,24.31,26.99,28.08,30.97,32.06,35.45,39.09,40.07,44.95,47.86,50.94,51.99,54.93,55.84,
+                    58.69,58.93,63.54,65.39,69.7,72.64,74.92,78.96,79.90,83.80,85.46,87.62,88.90,91.22,92.90,95.94,98.00,101.07,102.90,106.42,107.86,112.41,114.81,
+                    118.71,121.76,127.6,126.90,131.29,13.90,137.32,138.90,140.11,140.90,144.24,145.00,150.36,151.96,157.25,158.92,162.50,164.93,167.5,168.93,173.04,
+                    174.96,178.49,180.94,183.84,186.20,190.23,192.21,195.07,196.97,200.59,204.38,207.20,208.98,209.00,210.00,222.00,223.00,226.00,227.00,231.03,232.03,
+                    237.00,238.03,243,244,247,247,251,252,257,258,259,261,262,264,266,268,272,277,276,281,280,285};
+
+int gd = DETECT,gm,i;
+char b;
+void main()
+{
+   int ab,i;
+   char ch1,ch2;
+   
+   table()
+   getch();
+   cleardevice();
+   information();
+   cleardevice();
+   history();
+  cleardevice();
+  charactersicts();
+  cleardevice();
+  formulas();
+  cleardevice();
+  features();
+  cleardevice();
+
+  while(1)
+  {
+        printf("\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        printf("\n 1. Search By Automic Number");
+        printf("\n 2. Search By Automic Symbol");
+        printf("\n 3. Search By Automic Name");
+        printf("\n 4. Search By Automic Weight");
+        printf("\n 5. Search By Exit");
+        printf("\n Enter Your Choice : ");
+        scanf("%d",&ab);
+        
+        switch(ab)
+        {
+           case 1:
+                   i = atomic_number();
+                   break;
+           case 2:
+                   i = atomic_symbol();
+                   break;
+           case 3:
+                   i = atomic_name();
+                   printf("%d",i);
+                   break;
+           case 4:
+                   i = atomic_weight();
+                   break;
+           case 5:
+                   exit(0);
+                   break;
+           default:
+                  printf("\n Invalid Choice");
+                  
+if(i == -1)
+{
+       system("cls");
+       printf("\n Oops ! \nNo Such element present !\n");
+			printf("\n Make a right choice this time !\n\n");
+}
+else if (i==999)
+			continue;
+		else
+		{
+			system("cls");
+			ch1=block(i);
+			ch2=property(i);
+			show(i,ch1,ch2);
+		}
+		i=999;
+	}
+  }
+  getch();
+  
+  void table()
+  {
+     initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+     settextstyle(0,EMPTY_FILL,5);
+     setcolor(WHITE);
+     outtextxy(20,10,"PERIODIC TABLE");
+     setcolor(WHITE);
+     
+    //periods
+    line(595,100,630,100);
+    line(0,100,35,100);
+    line(0,130,70,130);
+    line(420,130,630,130);
+    line(0,190,630,190);
+    line(0,220,630,220);
+    line(0,250,630,250);
+    line(0,280,630,280);
+    line(0,310,630,310);
+    
+    //groups
+    line(0,100,0,310);
+    line(35,100,35,310);
+    line(70,130,70,310);
+    line(105,190,105,310);
+    line(140,190,140,310);
+    line(175,190,175,310);
+    line(210,190,210,310);
+    line(245,190,245,310);
+    line(280,190,280,310);
+    line(315,190,315,310);
+    line(350,190,350,310);
+    line(385,190,385,310);
+    line(420,130,420,310);
+    line(455,130,455,310);
+    line(490,130,490,310);
+    line(525,130,525,310);
+    line(560,130,560,310);
+    line(595,100,595,310);
+    line(630,100,630,310);
+    
+    settextstyle(0,EMPTY_FILL,1);
+    setcolor(WHITE);
+    
+    outtextxy(15,90,"1");
+    outtextxy(50,90,"2");
+    outtextxy(85,90,"3");
+    outtextxy(120,90,"4");
+    outtextxy(155,90,"5");
+    outtextxy(190,90,"6");
+    outtextxy(225,90,"7");
+    outtextxy(260,90,"8");
+    outtextxy(295,90,"9");
+    outtextxy(325,90,"10");
+    outtextxy(360,90,"11");
+    outtextxy(395,90,"12");
+    outtextxy(430,90,"13");
+    outtextxy(465,90,"14");
+    outtextxy(500,90,"15");
+    outtextxy(535,90,"16");
+    outtextxy(570,90,"17");
+    outtextxy(605,90,"18");
+    
+    outtextxy(10,105,"1.");
+    outtextxy(10,125,"H");
+    outtextxy(10,135,"3.");
+    outtextxy(10,125,"Li");
+    outtextxy(10,165,"11.");
+    outtextxy(10,180,"Na");
+    outtextxy(10,195,"19.");
+    outtextxy(10,210,"K");
+    outtextxy(10,225,"37.");
+    outtextxy(10,240,"Rb");
+    outtextxy(10,255,"55.");
+    outtextxy(10,270,"Cs");
+    outtextxy(10,285,"88.");
+    outtextxy(10,300,"Fr");
+    outtextxy(45,135,"4.");
+    outtextxy(45,150,"Be");
+    outtextxy(45,165,"12.");
+    outtextxy(45,180,"Mg");
+    outtextxy(45,195,"20.");
+    outtextxy(45,225,"38.");
+    outtextxy(45,240,"Sr");
+    outtextxy(45,255,"56.");
+    outtextxy(45,270,"Ba");
+    outtextxy(45,285,"88.");
+    outtextxy(45,300,"Ra");
+    outtextxy(80,195,"21.");
+    outtextxy(80,210,"Sc");
+    outtextxy(80,225,"39.");
+    outtextxy(80,240,"Y");
+    outtextxy(80,255,"57.");
+    outtextxy(80,270,"71.");
+    outtextxy(80,285,"89.");
+    outtextxy(80,300,"103.");
+    outtextxy(115,195,"22.");
+    outtextxy(115,210,"Ti");
+    outtextxy(115,225,"40.");
+    outtextxy(115,240,"Zr");
+    outtextxy(115,255,"72.");
+    outtextxy(115,270,"Hf");
+    outtextxy(115,285,"104.");
+    outtextxy(115,300,"Rf");
+    outtextxy(150,195,"23.");
+    outtextxy(150,210,"V");
+    outtextxy(150,225,"41.");
+    outtextxy(150,240,"Nb");
+    outtextxy(150,255,"73.");
+    outtextxy(150,270,"Ta");
+    outtextxy(145,285,"105.");
+    outtextxy(185,195,"24.");
+    outtextxy(185,210,"Cr");
+    outtextxy(185,225,"42.");
+    outtextxy(185,240,"Mo");
+    outtextxy(185,255,"34.");
+    outtextxy(180,285,"106.");
+    outtextxy(185,300,"Sg");
+    outtextxy(220,195,"25.");
+    outtextxy(220,210,"Mn");
+    outtextxy(220,225,"43.");
+    outtextxy(220,240,"Tc");
+    outtextxy(220,255,"75.");
+    outtextxy(225,270,"Re");
+    outtextxy(215,285,"107.");
+    outtextxy(220,300,"Bh");
+    outtextxy(255,195,"26.");
+    outtextxy(255,210,"Fe");
+    outtextxy(255,225,"44.");
+    outtextxy(255,240,"Ru");
+    outtextxy(255,255,"76.");
+    outtextxy(255,270,"Os");
+    outtextxy(255,285,"108.");
+    outtextxy(255,300,"Hs");
+    outtextxy(290,195,"27.");
+    outtextxy(290,210,"Co");
+    outtextxy(290,225,"45.");
+    outtextxy(290,240,"Rh");
+    outtextxy(290,255,"77.");
+    outtextxy(290,270,"Ir");
+    outtextxy(285,285,"109.");
+    outtextxy(290,300,"Mt");
+    outtextxy(325,195,"28.");
+    outtextxy(325,225,"46.");
+    outtextxy(325,210,"Ni");
+    outtextxy(325,225,"46.");
+    outtextxy(325,240,"Pd");
+    outtextxy(325,255,"78.");
+    outtextxy(325,270,"Pt");
+    outtextxy(320,285,"110.");
+    outtextxy(325,300,"Ds");
+    outtextxy(360,195,"29.");
+    outtextxy(360,210,"Cu");
+    outtextxy(360,225,"47.");
+    outtextxy(360,240,"Ag");
+    outtextxy(360,255,"79.");
+    outtextxy(360,270,"Au");
+    outtextxy(355,285,"111.");
+    outtextxy(360,300,"Rg");
+    outtextxy(395,195,"30.");
+    outtextxy(395,210,"Zn");
+    outtextxy(395,225,"48.");
+    outtextxy(395,240,"Cd");
+    outtextxy(395,255,"80.");
+    outtextxy(395,270,"Hg");
+    outtextxy(395,285,"112.");
+    outtextxy(395,300,"Cn");
+    outtextxy(435,135,"5.");
+    outtextxy(435,150,"B");
+    outtextxy(430,165,"13.");
+    outtextxy(430,180,"Ai");
+    outtextxy(430,195,"31.");
+    outtextxy(430,210,"Ga");
+    outtextxy(430,225,"49.");
+    outtextxy(430,240,"In");
+    outtextxy(430,255,"81.");
+    outtextxy(430,270,"Ti");
+    outtextxy(425,285,"113.");
+    outtextxy(425,300,"Nh");
+    outtextxy(465,135,"6.");
+    outtextxy(465,150,"C");
+    outtextxy(465,165,"14.");
+    outtextxy(465,180,"Si");
+    outtextxy(465,195,"32.");
+    outtextxy(465,210,"Ge");
+    outtextxy(465,255,"50.");
+    outtextxy(465,240,"Sn");
+    outtextxy(465,255,"82.");
+    outtextxy(460,270,"Pb");
+    outtextxy(460,285,"114.");
+    outtextxy(460,300,"Fl");
