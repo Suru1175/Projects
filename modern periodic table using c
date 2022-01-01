@@ -600,3 +600,15 @@ void information()
       {
         exit(0);
       }
+    else
+    {
+       printf("\n Invalid Choice");
+       printf("\n Press '0' or 'o' to Continue.. or any key to exit...");
+       scanf("%s",&b);
+    }
+  }while(b == 'o'|| b == '0');
+  printf("\n\n Press Any Key To Continue \n");
+  getch();
+  }
+  int history()
+  {   
