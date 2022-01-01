@@ -469,3 +469,5 @@ void information()
   printf("\n 5.Proton           \t\t\t\t 6.Neutron");
   printf("\n 7.Electron         \t\t\t\t 8.Energy Level");
   printf("\n 9.Orbital          \t\t\t\t 10.Valence ELectron");
+  printf("\n 11.Periods         \t\t\t\t 12.Groups");
+  printf("\n 13.Ionisation      \t\t\t\t 14.Cations");
