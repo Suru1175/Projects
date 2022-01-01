@@ -486,7 +486,8 @@ void information()
       
       if(i == 1)
       {
-        printf("\n Periodic Table :- The periodic table is a tabular array of the chemical elements organized by atomic number, from the element with the lowest atomic number, hydrogen, to the element with the highest atomic number, oganesson ");
+        printf("\n Periodic Table :- The periodic table is a tabular array of the chemical elements organized by atomic number, from the element with the lowest atomic number, 
+	hydrogen, to the element with the highest atomic number, oganesson ");
       }
       else if(i == 2)
       {
@@ -494,7 +495,8 @@ void information()
       }
       else if(i == 3)
       {
-       printf("\n Atom :- An atom is the smallest unit of ordinary matter that forms a chemical element. Every solid, liquid, gas, and plasma is composed of neutral or ionized atoms.");
+       printf("\n Atom :- An atom is the smallest unit of ordinary matter that forms a chemical element. Every solid, liquid, gas, and plasma is composed of neutral or ionized 
+       atoms.");
       }
        else if(i == 4)
       {
@@ -502,7 +504,8 @@ void information()
       }
       else if(i == 5)
       {
-       printf("\n Proton :- A proton is a subatomic particle, symbol p or p⁺ , with a positive electric charge of +1e elementary charge and a mass slightly less than that of a neutron.");
+       printf("\n Proton :- A proton is a subatomic particle, symbol p or p⁺ , with a positive electric charge of +1e elementary charge and a mass slightly less than that of
+       a neutron.");
       }
        else if(i == 6)
       {
@@ -558,11 +561,13 @@ void information()
       }
        else if(i == 19)
       {
-       printf("\n Non-Metal  :- a nonmetal is a chemical element that usually gains electrons when reacting with a metal, and which forms an acid if combined with oxygen and hydrogen");
+       printf("\n Non-Metal  :- a nonmetal is a chemical element that usually gains electrons when reacting with a metal, and which forms an acid if combined with oxygen and 
+       hydrogen");
       }
        else if(i == 20)
       {
-       printf("\n Metalloid  :- A metalloid is a type of chemical element which has a preponderance of properties in between, or that are a mixture of, those of metals and nonmetals ");
+       printf("\n Metalloid  :- A metalloid is a type of chemical element which has a preponderance of properties in between, or that are a mixture of, those of metals and 
+       nonmetals ");
       }
        else if(i == 21)
       {
@@ -578,19 +583,23 @@ void information()
       }
        else if(i == 24)
       {
-       printf("\n Halogen  :- The halogens are a group in the periodic table consisting of five or six chemically related elements: fluorine, chlorine, bromine, iodine (I), and astatine.");
+       printf("\n Halogen  :- The halogens are a group in the periodic table consisting of five or six chemically related elements: fluorine, chlorine, bromine, iodine (I), 
+       and astatine.");
       }
        else if(i == 25)
       {
-       printf("\n Nobel Gas  :- The noble gases make up a class of chemical elements with similar properties; under standard conditions, they are all odorless, colorless, monatomic gases with very low chemical reactivity");
+       printf("\n Nobel Gas  :- The noble gases make up a class of chemical elements with similar properties; under standard conditions, they are all odorless, colorless, 
+       monatomic gases with very low chemical reactivity");
       }
       else if(i == 26)
       {
-       printf("\n Isotope  :- Isotopes can be defined as the variants of chemical elements that possess the same number of protons and electrons, but a different number of neutrons ");
+       printf("\n Isotope  :- Isotopes can be defined as the variants of chemical elements that possess the same number of protons and electrons, but a different number of 
+       neutrons ");
       }
       else if(i == 27)
       {
-       printf("\n Lanthanide  :- The lanthanide or lanthanoid series of chemical elements comprises the 15 metallic chemical elements with atomic numbers 57–71, from lanthanum through lutetium ");
+       printf("\n Lanthanide  :- The lanthanide or lanthanoid series of chemical elements comprises the 15 metallic chemical elements with atomic numbers 57–71, from lanthanum 
+       through lutetium ");
       }
        else if(i == 28)
       {
@@ -852,4 +861,3 @@ int atomic_name(void)
 		printf("Metal\n");
 	printf("\n\t\t\t\t\t\tThank You ! \n\n\n");
 }
-	   
