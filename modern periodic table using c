@@ -471,3 +471,132 @@ void information()
   printf("\n 9.Orbital          \t\t\t\t 10.Valence ELectron");
   printf("\n 11.Periods         \t\t\t\t 12.Groups");
   printf("\n 13.Ionisation      \t\t\t\t 14.Cations");
+  printf("\n 15.Anion           \t\t\t\t 16.Atomic Number");
+  printf("\n 17.Mass Number     \t\t\t\t 18.Metal");
+  printf("\n 19.Non-Metal       \t\t\t\t 20.Metalloid");
+  printf("\n 21.Alkali Family   \t\t\t\t 22.Alkali Earth Metal");
+  printf("\n 23.Calchogen       \t\t\t\t 24.Halogen");
+  printf("\n 25.Nobel Gas       \t\t\t\t 26.Isotope");
+  printf("\n 27.Lanthanide      \t\t\t\t 28.Actinides");
+  printf("\n 29.Exit");
+  printf("\n **********************************\n");
+  do {
+      printf("\n Enter Your Choice : ");
+      scanf("%d",&i);
+      
+      if(i == 1)
+      {
+        printf("\n Periodic Table :- The periodic table is a tabular array of the chemical elements organized by atomic number, from the element with the lowest atomic number, hydrogen, to the element with the highest atomic number, oganesson ");
+      }
+      else if(i == 2)
+      {
+       printf("\n Element :- an element is a pure substance consisting only of atoms that all have the same numbers of protons in their nuclei ");
+      }
+      else if(i == 3)
+      {
+       printf("\n Atom :- An atom is the smallest unit of ordinary matter that forms a chemical element. Every solid, liquid, gas, and plasma is composed of neutral or ionized atoms.");
+      }
+       else if(i == 4)
+      {
+       printf("\n Nucleus :- The atomic nucleus is the small, dense region consisting of protons and neutrons at the center of an atom ");
+      }
+      else if(i == 5)
+      {
+       printf("\n Proton :- A proton is a subatomic particle, symbol p or p⁺ , with a positive electric charge of +1e elementary charge and a mass slightly less than that of a neutron.");
+      }
+       else if(i == 6)
+      {
+       printf("\n Neutron :- The neutron is a subatomic particle, symbol n or n⁰ , which has a neutral charge, and a mass slightly greater than that of a proton.");
+      }
+       else if(i == 7)
+      {
+       printf("\n Electron :- The electron is a subatomic particle whose electric charge is negative one elementary charge");
+      }
+      else if(i == 8)
+      {
+       printf("\n Energy Level :- The electrons surrounding an atom are located in regions around the nucleus called “energy levels”");
+      }
+       else if(i == 9)
+      {
+       printf("\n Orbital :- An orbit in chemistry is the fixed path on which electron moves or revolves around the atom's nucleus");
+      }
+       else if(i == 10)
+      {
+       printf("\n Valence Electron :- Valence electrons are the electrons located at the outermost shell of an atom");
+      }
+      else if(i == 11)
+      {
+       printf("\n Periods :- The Horizontal rows of the periodic table ");
+      }
+      else if(i == 12)
+      {
+       printf("\n Groups :- The vertical columns of the periodic table ");
+      }
+      else if(i == 13)
+      {
+       printf("\n Ionisation :- Ionization or ionisation is the process by which an atom or a molecule acquires a negative or positive charge by gaining or losing electrons ");
+      }
+      else if(i == 14)
+      {
+       printf("\n Cation :- Cations are positively-charged ions  ");
+      }
+      else if(i == 15)
+      {
+       printf("\n Anions :- Anions are negatively-charged ions  ");
+      }
+      else if(i == 16)
+      {
+       printf("\n Atomic Number  :- The atomic number or proton number of a chemical element is the number of protons found in the nucleus of every atom of that element");
+      }
+       else if(i == 17)
+      {
+       printf("\n Mass Number  :- TThe mass number, also called atomic mass number or nucleon number, is the total number of protons and neutrons in an atomic nucleus");
+      }
+       else if(i == 18)
+      {
+       printf("\n Metal  :- A substance with high electrical conductivity, luster, and malleability, which readily loses electrons to form positive ions (cations)");
+      }
+       else if(i == 19)
+      {
+       printf("\n Non-Metal  :- a nonmetal is a chemical element that usually gains electrons when reacting with a metal, and which forms an acid if combined with oxygen and hydrogen");
+      }
+       else if(i == 20)
+      {
+       printf("\n Metalloid  :- A metalloid is a type of chemical element which has a preponderance of properties in between, or that are a mixture of, those of metals and nonmetals ");
+      }
+       else if(i == 21)
+      {
+       printf("\n Alkali Family  :- The alkali metal family is found on the periodic table in Group 1, which is on the far left side of the table");
+      }
+      else if(i == 22)
+      {
+       printf("\n Alkali Earth Metal  :- The alkaline earth metals are the second most reactive family of elements");
+      }
+      else if(i == 23)
+      {
+       printf("\n Calchogen  :- The chalcogens (ore forming) are the chemical elements in group 16 of the periodic table. This group is also known as the oxygen family.");
+      }
+       else if(i == 24)
+      {
+       printf("\n Halogen  :- The halogens are a group in the periodic table consisting of five or six chemically related elements: fluorine, chlorine, bromine, iodine (I), and astatine.");
+      }
+       else if(i == 25)
+      {
+       printf("\n Nobel Gas  :- The noble gases make up a class of chemical elements with similar properties; under standard conditions, they are all odorless, colorless, monatomic gases with very low chemical reactivity");
+      }
+      else if(i == 26)
+      {
+       printf("\n Isotope  :- Isotopes can be defined as the variants of chemical elements that possess the same number of protons and electrons, but a different number of neutrons ");
+      }
+      else if(i == 27)
+      {
+       printf("\n Lanthanide  :- The lanthanide or lanthanoid series of chemical elements comprises the 15 metallic chemical elements with atomic numbers 57–71, from lanthanum through lutetium ");
+      }
+       else if(i == 28)
+      {
+       printf("\n Actinides :-  The Actinide series contains elements with atomic numbers 89 to 103 and is in the sixth period and the third group of the periodic table ");
+      }
+      else if(i == 29)
+      {
+        exit(0);
+      }
