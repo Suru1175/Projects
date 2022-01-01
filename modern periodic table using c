@@ -456,5 +456,5 @@ else if (i==999)
     settextstyle(0,EMPTY_FILL,1);
     setcolor(GREEN);
     outtextxy(0,390,"Lanthanides");
-    outtextxy(0,420,"Acyinides");
+    outtextxy(0,420,"Actinides");
     }
