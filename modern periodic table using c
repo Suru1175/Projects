@@ -458,3 +458,14 @@ else if (i==999)
     outtextxy(0,390,"Lanthanides");
     outtextxy(0,420,"Actinides");
     }
+void information()
+{
+  int a;
+  printf("\n\t\t DIGITAL MODERN PERIODIC TABLE \t");
+  printf("\n **********************************\n");
+  printf("\n Terms Related To Periodic Table");
+  printf("\n 1.Periodic Tab     \t\t\t\t 2.Element");
+  printf("\n 3.Atom             \t\t\t\t 4.Nucleus");
+  printf("\n 5.Proton           \t\t\t\t 6.Neutron");
+  printf("\n 7.Electron         \t\t\t\t 8.Energy Level");
+  printf("\n 9.Orbital          \t\t\t\t 10.Valence ELectron");
