@@ -1,0 +1,14 @@
+Elements are arranged in the increasing order of atomic numbers.
+Elements in the modern periodic table are arranged in 7 periods and 18 groups.
+Horizontal rows are called periods and vertical columns are called groups.
+Elements are placed in periods based on the number of shells in their atoms.
+The shortest period is the first period which contains only two elements – Hydrogen and Helium.
+The second period contains elements from Lithium to Neon.
+The third period contains elements from Sodium to Argon.
+The fourth period contains elements from Potassium to Krypton.
+The fifth period contains elements from Rubidium to Xenon.
+Sixth period is considered as the longest periods in the periodic table. It contains elements from Cesium to Radon 
+Seventh period is incomplete period
+In group IIIB of the sixth period Lanthanides are placed.
+In group IIIB of the seventh period Actinides are placed
+In periodic table Lanthanides and Actinides are shown in the bottom of the periodic table.
