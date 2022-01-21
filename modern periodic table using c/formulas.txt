@@ -1,0 +1,5 @@
+*] mass number :- protons + neutrons
+*] moles :- mass of substance / mass of one mole
+*] molar mass :- M = m/n
+*] molecular weight :- addition of their atomic weight
+*] no of neutrons :- mass no - atomic no
