@@ -1,0 +1,74 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta ng-model="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"&gt;></script>
+        <script>
+            var app = angular.module('mod', []);
+            app.controller('ctrl',function($scope, $http){
+                
+                $scope.postD=()=>{
+                   
+                    var data ={
+                        
+                        Name : $scope.Name,
+                        Feed : $scope.Feed,
+                        
+                    }
+                            
+                    $http({
+                        url: '/',
+                        method: "POST",
+                        data: JSON.stringify(data),
+                        header: 'Content-Type: application/json'
+                    })
+                    .then(function (res) {  
+                        console.log("Res",res.data);
+                        $scope.feedData = res.data;  
+                        
+                    },(function (err) {  
+                        console.log("Err",err)
+                        alert(err);  
+                    }))
+                }
+                
+            })
+        </script>
+        <style>
+            .tab{
+                background-color:black;
+                color: aliceblue;
+            }
+            th{
+                color: plum;
+            }
+        </style>
+    </head>
+    <body ng-app="mod" ng-controller="ctrl" >
+        
+        <center> 
+            <h2> <b><i> <u>THE GOLDEN LEAF</u> </i></b></h2> 
+            <h2> <b> Enjoy life sip by sip, not gulp by gulp </b></h2> 
+            <p>Thanks For Visiting...</p>
+        
+       <br><br>
+        <form name="regForm" ng-init = "op=false;"> 
+            <fieldset style='width:400px'>
+                <legend>FEEDBACK FORM</legend> 
+            Name: <input type="text" ng-model="Name" name = "Name" placeholder="Enter your Name" required/><br> <br> 
+            Feedback : <input type="text" ng-model="Feed" name = "Feed" placeholder="Enter your Feedback" required"/><br> <br> 
+            
+            <input type="submit" value="REGISTER" ng-click="postD(); op=true" >
+         </fieldset>   
+        </form>
+        </center>
+        <br>
+        <table class="tab" border=1 cellspacing=0 cellpadding=10 ng-show="op">
+            <tr><th> Name </th><th>Feedback</th></tr>
+            <tr ng-repeat="x in feedData"><td>{{x.Name}}</td><td>{{x.Feed}}</td></tr>
+        </table>
+    </body>
+</html>

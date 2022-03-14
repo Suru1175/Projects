@@ -1,0 +1,90 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta ng-model="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Billing</title>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"&gt;></script>
+        <script>
+            var app = angular.module('mod', []);
+            app.controller('ctrl',function($scope, $http){
+                
+                $scope.postD=()=>{
+                   
+                    var data ={
+                        
+                        Sname : $scope.Sname,
+                        Phnno :$scope.Phnno,
+                        Od : $scope.Od,
+                        Price : $scope.Price,
+                        Famount : $scope.Famount
+                       
+                    }
+                            
+                    $http({
+                        url: '/',
+                        method: "POST",
+                        data: JSON.stringify(data),
+                        header: 'Content-Type: application/json'
+                    })
+                    .then(function (res) {  
+                        console.log("Res",res.data);
+                        $scope.abcData = res.data;  
+                        
+                    },(function (err) {  
+                        console.log("Err",err)
+                        alert(err);  
+                    }))
+                }
+                
+            })
+        </script>
+        <style>
+            .tab{
+                background-color:black;
+                color: aliceblue;
+            }
+            th{
+                color: magenta;
+            }
+        </style>
+    </head>
+    <body ng-app="mod" ng-controller="ctrl">
+        
+            <center> 
+                <h2> <b> <u>THE GOLDEN LEAF</u> </b></h2> 
+                <h2> <b> Enjoy life sip by sip, not gulp by gulp </b></h2> 
+                <h2> <a href="mailto: goldenleaf123@gmail.com"   target="_blank"> Mail : goldenleaf123@gmail.com</a></h2> 
+                <h2> <a href="https://www.facebook.com/" target="_blank" >Facebook : goldenleaf123</a></h2>
+                <h2> <a href="https://www.instagram.com/" target="_blank" > Instagram : @goldenleaf123</a></h2>
+            
+        <form name="regForm" ng-init = "op=false;">
+            <fieldset style='width:400px'>
+                <legend>BILLING FORM</legend>
+                
+                Name <input type="text" ng-model="Sname" name = "Sname" placeholder="Enter your Name" required>
+                Phone No <input type="text" ng-model="Phnno" name = "Phnno" placeholder="Enter your Phone Number" required>
+                <br> <br>
+                <table border = 2px>
+                    <tr>
+                        <td> Order Item </td>
+                        <td> Price</td>
+                    </tr>
+                    <tr><td><input type="text" ng-model="Od" name = "Od"  required></td><td><input type="text" ng-model="Price" name = "Price"  required></td></tr>
+                    
+                </table>
+                <br>
+                Final Amount : <input type = "text" ng-model="Famount" name = "Famount" style ="width: 500px; height: 30px;"/><br> <br> 
+                
+                <input type="submit" value="REGISTER" ng-click="postD(); op=true" >
+            </fieldset>
+        </form>  </center>
+        <br>
+        <table class="tab" border=1 cellspacing=0 cellpadding=10 ng-show="op">
+            <tr><th>Name </th><th>Phone No</th><th>Order Item </th><th>Price </th><th>Final Amount</th></tr>
+            <tr ng-repeat="x in abcData"><td>{{x.Sname}}</td><td>{{x.Phnno}}</td><td>{{x.Od}}</td><td>{{x.Price}}</td><td>{{x.Famount}}</td></tr>
+        </table>
+    </body>
+    </html>
