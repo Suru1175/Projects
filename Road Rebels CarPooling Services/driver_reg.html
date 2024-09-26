@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"  dir="Itr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Responsive Registration Form </title>
+        <link rel="stylesheet" href="driver_reg.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">Driver Registration</div>
+            <form action="http://localhost:3700/submit-form" method="POST">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full  Name</span>
+                        <input type="text" name="name" placeholder="Enter your name"required>
+                    </div>
+                    <div class="input-box">
+                         <span class="details">Phone Number</span>
+                         <input type="text" name="phone" placeholder="Enter your number"required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Car no.</span>
+                        <input type="text" name="cno" placeholder="Enter your car number"required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">License</span>
+                        <input type="text" name="lic" placeholder="Enter your License number"required>
+                    </div>
+                    <div class="input-box">
+                       <span class="details">Experience</span>
+                       <input type="number" name="exp" placeholder="Experience"required>
+                    </div>
+                    <div class="input-box">
+                         <label for="details">vacant seats</label>
+                         <input type="number" name="vac" id="vacant seats"required>
+                    </div>
+       
+                    <div class="input-box">
+                           <span class="details">Username</span>
+                           <input type="text" name="username" placeholder="Enter your Username"required>
+                    </div>
+                    <div class="input-box">
+                          <span class="details">Set price</span>
+                          <input type="text" name="price" placeholder="price"required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">password</span>
+                        <input type="password" name="pwd" placeholder="password"required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">confirm password</span>
+                        <input type="password" name="cpwd" placeholder="confirm password"required>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Register">
+                    </div>
+            </form>
+        </div>
+    </body>
+</html>

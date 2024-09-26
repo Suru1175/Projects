@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name":" VOLVO",
+        "price": 20,
+        "image": "image/car1.webp"
+    },
+    {
+        "id": 2,
+        "name":" Wagon R",
+        "price": 50,
+        "image": "image/car2.webp"
+    },
+    {
+        "id": 3,
+        "name":" Maruti Swift",
+        "price": 50,
+        "image": "image/car3.webp"
+    },
+    {
+        "id": 4,
+        "name":" Maruti Ertiga",
+        "price": 80,
+        "image": "image/car4.webp"
+    },
+    {
+        "id": 5,
+        "name":" Mahindra Scorpio N",
+        "price": 100,
+        "image": "image/car5.webp"
+    },
+    {
+        "id": 6,
+        "name":" SUV",
+        "price": 100,
+        "image": "image/car6.webp"
+    },
+    {
+        "id": 7,
+        "name":" Mahindra XUV 700",
+        "price": 90,
+        "image": "image/car7.webp"
+    },
+    {
+        "id": 8,
+        "name":" Tata Nexon",
+        "price": 80,
+        "image": "image/car8.webp"
+    }
+
+]

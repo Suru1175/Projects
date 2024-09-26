@@ -1,0 +1,63 @@
+html{
+    font-size: 50.5%;
+    overflow-x: hidden;
+ }
+.rc{
+    max-width: 1000px;
+    margin:0 auto;
+    padding:4rem 3rem;
+ }
+ .rc .title{
+    font-size: 3.5rem;
+    color:#444;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+ }
+ .rc .products-rc{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+ }
+ .rc .products-rc .product{
+    text-align: center;
+    padding:3rem 2rem;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    outline: .1rem solid #ccc;
+    outline-offset: -1.5rem;
+    cursor: pointer;
+ }
+ .rc .products-rc .product:hover{
+    outline: .2rem solid #222;
+    outline-offset: 0;
+ }
+ .rc .products-rc .product img{
+    height: 25rem;
+    width: 25rem;
+ }
+ .rc .products-rc .product:hover img{
+    transform: scale(.9);
+ }
+ .rc .products-rc .product h3{
+    padding:.5rem 0;
+    font-size: 2rem;
+    color:#444;
+ }
+ .rc .products-rc .product:hover h3{
+    color:#27ae60;
+ }
+ .rc .products-rc .product .price{
+    font-size: 2rem;
+    color:#444;
+ }
+ @media (max-width:991px){
+    html{
+       font-size: 55%;
+    }
+ }
+ @media (max-width:450px){
+    html{
+       font-size: 50%;
+    }
+ }

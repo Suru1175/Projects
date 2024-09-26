@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data from MySQL</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .action-buttons button {
+      padding: 5px 10px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    .accept-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+
+    .reject-button {
+      background-color: #f44336;
+      color: white;
+      border: none;
+    }
+
+    #additional-button {
+      padding: 5px 10px;
+      background-color: #008CBA;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Data from MySQL</h1>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>Select</th>
+        <th>Customer Name</th>
+        <th>Contact Number</th>
+        <th>Email ID</th>
+        <th>From location</th>
+        <th>To location</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody id="data-body">
+
+    </tbody>
+  </table>
+
+  <!-- Accept/Reject Button Row http://127.0.0.1:5501/cars.html -->
+  <table>
+    <tbody>
+      <tr id="accept-reject-button-row">
+        <td colspan="6" style="text-align: center;">
+          <button id="accept-button" class="action-buttons">Accept Selected</button>
+          <button id="reject-button"  class="action-buttons">Reject Selected</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    fetch('http://localhost:2000')
+      .then(response => response.json())
+      .then(data => {
+        const tableBody = document.getElementById('data-body');
+
+        data.forEach(rowData => {
+          const row = document.createElement('tr');
+
+          // Add checkbox for selection
+          const selectCell = document.createElement('td');
+          const selectCheckbox = document.createElement('input');
+          selectCheckbox.type = 'checkbox';
+          selectCell.appendChild(selectCheckbox);
+          row.appendChild(selectCell);
+
+          // Add data cells
+          Object.values(rowData).forEach(value => {
+            const cell = document.createElement('td');
+            cell.textContent = value;
+            row.appendChild(cell);
+          });
+
+          // Add action buttons
+          const buttonCell = document.createElement('td');
+          const acceptButton = document.createElement('button');
+          acceptButton.textContent = 'Accept';
+          // acceptButton.classList.add('accept-button');
+          acceptButton.onclick = function() {
+            // Handle accept button click
+            alert('Accept button clicked for selected passengers.');
+          };
+          // buttonCell.appendChild(acceptButton);
+
+          const rejectButton = document.createElement('button');
+          rejectButton.textContent = 'Reject';
+          // rejectButton.classList.add('reject-button');
+          rejectButton.onclick = function() {
+            // Handle reject button click
+            const selectedPassengers = getSelectedPassengers();
+            selectedPassengers.forEach(passenger => {
+              // Remove the row from the table
+              const rowToRemove = tableBody.querySelector(`td:nth-child(2):contains("${passenger['From location']}")`).parentNode;
+              tableBody.removeChild(rowToRemove);
+              // Perform additional action (e.g., send a request to delete data from server)
+              // Here you can place your code to delete the data from the server
+            });
+            alert('Rejected selected passengers: ' + JSON.stringify(selectedPassengers));
+          };
+          // buttonCell.appendChild(rejectButton);
+
+          row.appendChild(buttonCell);
+
+          tableBody.appendChild(row);
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+
+    // Accept/Reject Button Functionality
+    document.getElementById('accept-button').onclick = function() {
+      const selectedPassengers = getSelectedPassengers();
+      alert('Accepting selected passengers: ' + JSON.stringify(selectedPassengers));
+      // Redirect to another page
+      window.location.href = 'http://127.0.0.1:5501/dashboard.html'; 
+    };
+
+    document.getElementById('reject-button').onclick = function() {
+      const selectedPassengers = getSelectedPassengers();
+      selectedPassengers.forEach(passenger => {
+        // Remove the row from the table
+        const rowToRemove = tableBody.querySelector(`td:nth-child(2):contains("${passenger['From location']}")`).parentNode;
+        tableBody.removeChild(rowToRemove);
+        // Perform additional action (e.g., send a request to delete data from server)
+        // Here you can place your code to delete the data from the server
+      });
+      alert('Rejected selected passengers: ' + JSON.stringify(selectedPassengers));
+      // Redirect to another page
+      window.location.href = 'http://127.0.0.1:5501/cars.html'; 
+    };
+
+    function getSelectedPassengers() {
+      const checkboxes = document.querySelectorAll('#data-body input[type="checkbox"]');
+      const selectedPassengers = [];
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          const row = checkbox.closest('tr');
+          const rowData = {
+            'From location': row.cells[1].textContent,
+            'To location': row.cells[2].textContent,
+            'Date': row.cells[3].textContent,
+            'Phone': row.cells[4].textContent
+          };
+          selectedPassengers.push(rowData);
+        }
+      });
+      return selectedPassengers;
+    }
+  </script>
+</body>
+</html>

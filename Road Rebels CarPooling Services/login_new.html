@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Car Pooling </title>
+        <link rel="stylesheet" href="log.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        </head>
+
+        <body>
+            <!-- Login Home Page -->
+            <section class="home" id="home">
+                <div class="rap">
+                    <header>
+                        <nav>
+                            <div class="l">Road Rebels</div>
+                            <div class="menu">
+                                <ul>
+                                    <li> <a href="#home"> Home </a></li>
+                                    <li> <a href="#about"> About </a></li>
+                                    <li> <a href="http://127.0.0.1:5501/add_car.html"> Add a Car </a></li>
+                                    <li> <a href="http://127.0.0.1:5501/my_bookings.html"> My Bookings  </a></li>
+                                    <li> <a href="my_Acc.html"> My Account </a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </header>
+                </div>
+                <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                <script>
+                    $(window).scroll(function(){
+                        if($(window).scrollTop()){
+                            $("nav").addClass("black");
+                        }
+                        else{
+                            $("nav").removeClass("black");
+                        }
+                    });
+                </script>
+            </section>
+        <!-- home section ends here -->
+        <!-- about us section -->
+        <section class="about" id="about">
+        <div class="w">
+            <div class="r">
+                <div class="ima">
+                    <img src="image\us.jpg" alt="">
+                </div>
+                <div class="abc">
+                    <h1>About US </h1>
+                    <h2> Road Rebels CarPooling Services</h2>
+                    <p>Despite the well-known benefits of carpooling, such as reduced traffic congestion, 
+                        cost savings, and environmental advantages, the overall adoption rate among 
+                        college students remains low. Traditionally,our service involved informal arrangements 
+                        among colleagues or neighbors. Today, technology plays a major role, with carpooling 
+                        apps connecting drivers and passengers with compatible routes and schedules.</p>
+                </div>
+            </div>
+        </div>
+        </section> 
+        <!-- about us section send here -->      
+       
+         
+    <!-- Contact US  section starts here-->
+    <section class="contact">
+        <div class="content">
+            <h2>Contact Us </h2>
+            <p>an arrangement among a group of automobile owners by which each owner in turn 
+                drives the others or their children to and from a designated place</p>
+        </div>
+        <div class="c">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="ic"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="text">
+                            <h3> Address</h3>
+                            <p> 4671 Sugar Camp Road, <br> Owatonna, Minnesota, <br> 55060</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="ic"> <i class="fa fa-phone" aria-hidden="true"></i> </div>
+                            <div class="text">
+                                <h3> Phone</h3>
+                                <p> 507 - 475 - 6094</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="ic"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                <div class="text">
+                                    <h3> Email</h3>
+                                    <p> wrub7d78i0e@temporary-mail.net</p>
+                                </div>
+                    </div>
+            </div>
+            <div class="contactForm">
+                <form action="http://localhost:3200/submit-form" method="POST">
+                    <h2> Send Message </h2>
+                    <div class="inputBox">
+                        <input type="text" name="Fname" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="Email" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea id="Msg" name = "Msg" required></textarea>
+                        <span>Type your Message....</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+     <!-- Contact US  section ends here-->
+        <!-- footer section starts here -->
+    <section class="foot" id="foot">
+        <footer  style="background-image:url(footer.png) ;">
+            <div class="horizontal">
+                <div class="col">
+                    <img src="image/logo.jpg" class="logo"> 
+                    <p>srushti yedi yedi yedi yedi yedi </p>
+                </div>
+                <div class="col">
+                <h3>office <div class="underline"><span></span></div></h3>
+                <p>ITPL</p>
+                <p>whitefield,pune</p>
+                <p>Maharashtra,PIN 29292, India</p>
+                <p class="email-id">xyz@gmail.com</p>
+                <h4>+91 - 0123456677</h4>
+                </div>
+                <div class="col">
+                    <h3>link <div class="underline"><span></span></div></h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#cars">Cars</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="#contact">Contact Us </a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Newsletter <div class="underline"><span></span></div></h3>
+                    <form>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <input type="email" placeholder="Enter your email id" required>
+                        <button type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Carpooling 2024 - All Rights Reserved</p>
+        </footer> 
+        </section>
+        <!-- footer section ends here -->
+        </body>
+    </head>
+</html>

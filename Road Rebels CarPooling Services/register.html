@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        body{
+  background: #eaeaea;
+}
+
+form{
+  background: #ffffff;
+  margin: 100px auto;
+  padding: 15px 40px 40px 40px;
+  width: 70%;
+}
+
+.tab p{
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+
+input{
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid #aaaaaa;
+}
+
+.index-btn-wrapper{
+  display: flex;
+}
+
+.index-btn{
+  margin: 20px 15px 0 0;
+  background: #04AA6D;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.index-btn:hover{
+  opacity: 0.8;
+}
+
+.step{
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  margin: 0 2px;
+  color: white;
+  background: green;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.25;
+}
+
+    </style>
+  </head>
+  <body>
+    <form action="http://localhost:3100/submit-form" method="POST">
+        <h1 align = center>Register</h1>
+  
+        <div style="text-align:center;">
+          <span class="step" id = "step-1">1</span>
+          <span class="step" id = "step-2">2</span>
+          <span class="step" id = "step-3">3</span>
+          <span class="step" id = "step-4">4</span>
+          <span class="step" id = "step-5">5</span>
+          <span class="step" id = "step-6">6</span>
+        </div>
+  
+        <div class="tab" id = "tab-1">
+          <p>Name:</p>
+          <input type = "text" placeholder="First Name" name="Fname">
+          <input type = "text" placeholder="Last Name" name="Lastname">
+          <div class="index-btn-wrapper">
+            <div class="index-btn" onclick="run(1, 2);">Next</div>
+          </div>
+        </div>
+  
+        <div class="tab" id = "tab-2">
+          <p>Contact Info:</p>
+          <input type = "text" placeholder="Email" name="Email">
+          <input type = "text" placeholder="Phone" name="Phone">
+          <div class="index-btn-wrapper">
+            <div class="index-btn" onclick="run(2, 1);">Previous</div>
+            <div class="index-btn" onclick="run(2, 3);">Next</div>
+          </div>
+        </div>
+  
+        <div class="tab" id = "tab-3">
+          <p>Birthday:</p>
+          <input type = "text" placeholder="dd" name="Dd">
+          <input type = "text" placeholder="mm" name="Mm">
+          <input type = "text" placeholder="yy" name="Yy">
+          <div class="index-btn-wrapper">
+            <div class="index-btn" onclick="run(3, 2);">Previous</div>
+            <div class="index-btn" onclick="run(3, 4);">Next</div>
+          </div>
+        </div>
+  
+        <div class="tab" id = "tab-4">
+          <p>Login Info:</p>
+          <input type = "text" placeholder="Username" name="Username">
+          <input type = "password" placeholder="Password" name="Password">
+          <input type = "password" placeholder="Confirm Password" name="Cp">
+          <div class="index-btn-wrapper">
+            <div class="index-btn" onclick="run(4, 3);">Previous</div>
+            <div class="index-btn" onclick="run(4, 5);">Next</div>
+          </div>
+        </div>
+        <div class="tab" id = "tab-5">
+          <p>Gender:</p>
+          <input type="radio" name="Gender" value="male"> Male
+          <input type="radio" name="Gender" value="female"> Female
+          <input type="radio" name="Gender" value="Unknown"> Prefer Not To Say
+          
+          <div class="index-btn-wrapper">
+            <div class="index-btn" onclick="run(5, 4);">Previous</div>
+            <div class="index-btn" onclick="run(5, 6);">Next</div>
+          </div>
+        </div>
+        <div class="tab" id = "tab-6">
+          <p>Address :</p>
+          <input type = "text" placeholder="Address" name="Address">
+          <input type = "text" placeholder="City" name="City">
+          <input type = "text" placeholder="state" name="State">
+          <input type = "text" placeholder="Country" name="Country">
+          <input type = "text" placeholder="Pincode" name="Pincode">
+          
+          <div class="index-btn-wrapper">
+            <div class="index-btn" onclick="run(6, 5);">Previous</div>
+            <div class="index-btn" onclick="run(6, 7);">Next</div>
+          </div>
+        </div>
+        <div class="tab" id = "tab-7">
+          <div class="index-btn-wrapper">
+            <div class="index-btn" onclick="run(7, 6);">Previous</div>
+            <!-- <button class = "index-btn" type="submit" name="submit" style = "background: blue;">Submit</button> -->
+           <button type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+  
+    <script>
+        // Default tab
+        $(".tab").css("display", "none");
+        $("#tab-1").css("display", "block");
+  
+        function run(hideTab, showTab){
+          if(hideTab < showTab){ // If not press previous button
+            // Validation if press next button
+            var currentTab = 0;
+            x = $('#tab-'+hideTab);
+            y = $(x).find("input")
+            for (i = 0; i < y.length; i++){
+              if (y[i].value == ""){
+                $(y[i]).css("background", "#ffdddd");
+                return false;
+              }
+            }
+          }
+  
+          // Progress bar
+          for (i = 1; i < showTab; i++){
+            $("#step-"+i).css("opacity", "1");
+          }
+  
+          // Switch tab
+          $("#tab-"+hideTab).css("display", "none");
+          $("#tab-"+showTab).css("display", "block");
+          $("input").css("background", "#fff");
+        }
+      </script> 
+  
+  </body>
+</html>
