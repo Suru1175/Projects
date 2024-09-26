@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        background-image: url(images/feed.jpeg);
+        background-repeat: no-repeat;
+        background-size: 1600px 800px;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="radio"] {
+        margin: 0 5px 0 0;
+    }
+    label {
+        font-weight: bold;
+    }
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Feedback Form</h2>
+    <form action="http://localhost:4400/submit-form" method="post">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Phone Number</label>
+        <input type="number" id="phone" name="phone" required>
+        
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <label for="rating">Rating</label>
+        <input type="radio" id="good" name="rating" value="good" required>
+        <label for="good">Good</label>
+        <input type="radio" id="average" name="rating" value="average" required>
+        <label for="average">Average</label>
+        <input type="radio" id="bad" name="rating" value="bad" required>
+        <label for="bad">Bad</label><br/>
+        <br>
+        <div class="btn-container">
+            <input type="submit" value="Submit" class="btn">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

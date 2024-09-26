@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="book_table.css">
+    <title>Book Your Table </title>
+</head>
+
+<body class="main_bg">
+    <div class="form">
+        <div class="form-text">
+            <h1><span><img src="images/art-1.png" alt=""></span>Book Now <span><img src="images/art-1.png" alt=""></span></h1>
+            <p>The Golden Leaf ( Tea Website )</p>
+        </div>
+        <div class="main-form">
+            <form action="http://localhost:4200/submit-form" action="/check_availability" method="post">
+                <div>
+                    <span>Your full name ?</span>
+                    <input type="text" name="name"  placeholder="Write your name here..." required>
+                </div>
+                <div>
+                    <span>Your Contact Number ?</span>
+                    <input type="number" name="cno"  placeholder="Write your contact number here..." required>
+                </div>
+                <div>
+                    <span>Your email address ?</span>
+                    <input type="email" name="eid" placeholder="Write your email here..." required> 
+                </div>
+                <div>
+                    <span>Your address ?</span>
+                    <input type="text" name="addr"  placeholder="Write your address here..." required>
+                </div>
+                <div>
+                    <!-- <---this is the select option--->
+                    <span>How many people ?</span>
+                    <select name="people"  required>
+                        <option value=""><---People---></option>
+                        <option value="1">1 People</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                        <option value="4">4 People</option>
+                    </select>
+                    <!-- <---this is the select option--->
+                </div>
+                <div>
+                    <!-- <---this is the select option--->
+                    <span>Select Table ?</span>
+                    <select name="Tno"  required>
+                        <option value=""><---Table Number---></option>
+                        <option value="1">1 </option>
+                        <option value="2">2 </option>
+                        <option value="3">3 </option>
+                        <option value="4">4 </option>
+                        <option value="4">5 </option>
+                    </select>
+                    <!-- <---this is the select option--->
+                </div>
+                <div>
+                    <span>What time ?</span>
+                    <input type="text" name="time" placeholder="Time" required>
+                </div>
+                <div>
+                    <span>What is the date ?</span>
+                    <input type="date" name="date" placeholder="date" required>
+                </div>
+                <div id="submit">
+                    <input type="submit" value="SUBMIT">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

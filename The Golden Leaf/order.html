@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="order.css">
+    <script src="scripts.js" defer></script> <!-- Ensure that the script is deferred -->
+</head>
+<body>
+    <div class="container">
+        <div class="title">ORDER FORM</div>
+        <form action="http://localhost:4300/submit-form" method="post">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" name="fullName" placeholder="Enter your name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" name="phoneNumber" placeholder="Enter your number" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email ID</span>
+                    <input type="text" name="email" placeholder="Enter your Email ID" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Table Number</span>
+                    <select name="Tno" required>
+                        <option value="">---Table Number---</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+            <table id="orderItems">
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="product" onchange="updatePrice(this)" required>
+                            <option value="green_tea">Green Tea</option>
+                            <option value="herbal_tea">Herbal Tea</option>
+                            <option value="black_tea">Black Tea</option>
+                        </select>
+                    </td>
+                    <td><input type="number" name="quantity" onchange="updateAmount(this)" required></td>
+                    <td><input type="text" name="price" step="0.01" readonly required></td>
+                </tr>
+            </table>
+            <button type="button" onclick="addOrderItem()">Add Item</button>
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</body>
+</html>

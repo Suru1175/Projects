@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Register Form For Admin</title>
+        <link rel="stylesheet" href="Reg_Admin.css">
+        <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    </head>
+    <body>
+        <div class="wrapper">
+            <form action="http://localhost:3900/submit-form" method="POST">
+                <h1>ADMIN REGISTRATION FORM</h1>
+                <div class="input-box">
+                    <div class="input-field">
+                        <input type="text" name="Fname" placeholder="Full Name" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="eid" placeholder="Email ID" required>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <div class="input-field">
+                        <input type="number" name="cno" placeholder="Contact Number" required>
+                        <i class='bx bxs-phone'></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" name="ccno" placeholder=" Alternate Contact Number" required>
+                        <i class='bx bxs-phone'></i>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <div class="input-field">
+                        <input type="text" name="Uname" placeholder="User Name" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="pwd" placeholder="Password" required>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </body>
+</html>
