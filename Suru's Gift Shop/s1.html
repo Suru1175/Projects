@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Testimonials Section</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* padding: 40px 20px; */
+      min-height: 100vh;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #f05365;
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+
+    .testimonials-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .quote-icon {
+      font-size: 40px;
+      color: #f05365;
+      position: absolute;
+      top: -10px;
+      right: 15px;
+    }
+
+    .customer-quote {
+      font-size: 1.1rem;
+      color: #555;
+      margin: 20px 0;
+    }
+
+    .customer-name {
+      font-weight: bold;
+      color: #333;
+      font-size: 1.2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .customer-quote {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="testimonials-section">
+    <div class="section-title">What Our Customers Say</div>
+    <div class="testimonials-container">
+      
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <span class="quote-icon">“</span>
+        <p class="customer-quote">
+          Amazing products and thoughtful packaging! Suru's Gift Shop made my gifting experience so special.
+        </p>
+        <div class="customer-name">— Happy Customer</div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <span class="quote-icon">“</span>
+        <p class="customer-quote">
+          The personalized gifts were absolutely stunning. My friends loved them! Highly recommend!
+        </p>
+        <div class="customer-name">— Jane D.</div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <span class="quote-icon">“</span>
+        <p class="customer-quote">
+          Exceptional service and beautifully crafted gifts. The perfect place for meaningful presents.
+        </p>
+        <div class="customer-name">— Mark R.</div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
